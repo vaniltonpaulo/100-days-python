@@ -1,3 +1,8 @@
+# VERY EASY
+
+import math
+
+
 def addition(a, b):
     return a + b
 
@@ -93,3 +98,18 @@ def fifty_thirty_twenty(ati):
 
 print(fifty_thirty_twenty(13450))
 print(fifty_thirty_twenty(347100))
+
+def next_square(n):
+    if math.sqrt(n).is_integer():
+        while True:
+            n += 1
+            result = math.sqrt(n)
+            if result.is_integer():
+                return n
+                break
+    else:
+        return "none"
+
+print(next_square(121))
+print(next_square(625))
+print(next_square(155))
