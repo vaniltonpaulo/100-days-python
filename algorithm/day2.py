@@ -51,3 +51,27 @@ def ctoa(char):
     return ord(char)
 
 print(ctoa("A"))
+print(ctoa("["))
+
+def area_shape(base, height, shape):
+    if shape == "triangle":
+        return int(base * height * 0.5)
+    else:
+        return base * height
+
+
+
+print(area_shape(2, 3, "triangle"))
+print(area_shape(8, 6, "parallelogram"))
+
+
+def accept_into_movie(age, is_supervised):
+    if is_supervised:
+        return True
+    elif age >= 15:
+        return True
+    else:
+        return False
+
+print(accept_into_movie(14, True))
+print(accept_into_movie(14.99999, False))
