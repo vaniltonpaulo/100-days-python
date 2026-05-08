@@ -161,6 +161,7 @@ print(fifty_thirty_twenty(13450)) # ➞ { "Needs": 6725, "Wants": 4035, "Savings
 
 
 import math
+
 def next_square(n):
     root = math.sqrt(n)
     if root.is_integer():
@@ -196,3 +197,99 @@ print(perfect_roots(256)) # ➞ True
 print(perfect_roots(1000)) # ➞ False
 
 print(perfect_roots(6561)) # ➞ True
+
+
+
+#Array
+
+def get_first_value(number_list):
+     return number_list[0]
+
+
+print(get_first_value([1, 2, 3])) # ➞ 1
+
+print(get_first_value([80, 5, 100])) # ➞ 80
+
+print(get_first_value([-500, 0, 50])) # ➞ -500
+
+print(get_first_value([-52320, 0, 50])) # ➞ -52320
+
+def total_amount_adjectives(dct):
+    return len(dct)
+
+print(total_amount_adjectives({ "a": "moron" })) # ➞ 1
+
+print(total_amount_adjectives({ "a": "idiot", "b": "idiot", "c": "idiot" })) # ➞ 3
+
+print(total_amount_adjectives({ "a": "moron", "b": "scumbag", "c": "moron", "d": "dirtbag" })) # ➞ 4
+
+obj3 = {'b': "scumbag", 'c': "moron", 'd': "dirtbag" } 
+
+
+print(total_amount_adjectives(obj3))
+
+
+def findLargestNum(nums):
+    return max(nums)
+
+print(findLargestNum([4, 5, 1, 3])) # ➞ 5
+
+print(findLargestNum([300, 200, 600, 150])) # ➞ 600
+
+print(findLargestNum([1000, 1001, 857, 1])) # ➞ 1001
+print(findLargestNum([1000, 1001, 857, 1, 1002])) # ➞ 1002
+print(findLargestNum([27364, 837363, 736736, 73635]))
+
+def find_smallest_num(nums):
+    return min(nums)
+
+print(find_smallest_num([34, 15, 88, 2])) # ➞ 2
+
+print(find_smallest_num([34, -345, -1, 100])) # ➞ -345
+
+print(find_smallest_num([-76, 1.345, 1, 0])) # ➞ -76
+
+print(find_smallest_num([0.4356, 0.8795, 0.5435, -0.9999])) # ➞ -0.9999
+
+print(find_smallest_num([7, 7, 7])) # ➞ 7
+
+
+
+def difference_max_min(lst):
+     return max(lst) - min(lst)
+
+print(difference_max_min([10, 4, 1, 4, -10, -50, 32, 21])) # ➞ 82
+# Smallest number is -50, biggest is 32.
+
+print(difference_max_min([44, 32, 86, 19])) # ➞ 67
+# Smallest number is 19, biggest is 86.
+
+print(difference_max_min([-70,43,34,54,22])) # ➞ 113
+
+def concat(lst1, lst2):
+        return lst1 + lst2
+
+
+print(concat([1, 3, 5], [2, 6, 8])) # ➞ [1, 3, 5, 2, 6, 8]
+
+print(concat([7, 8], [10, 9, 1, 1, 2])) # ➞ [7, 8, 10, 9, 1, 1, 2]
+
+print(concat([4, 5, 1], [3, 3, 3, 3, 3])) # ➞ [4, 5, 1, 3, 3, 3, 3, 3]
+
+
+
+
+def get_last_item(lst):
+     return lst[-1]
+
+print(get_last_item([1, 2, 3])) # ➞ 3
+
+print(get_last_item(["cat", "dog", "duck"])) # ➞ "duck"
+
+print(get_last_item([True, False, True])) # ➞ True
+
+print(get_last_item([7, "String", False])) # ➞ False
+
+print(get_last_item([False])) # ➞ False
+
+print(get_last_item([True, False, 'Apple'])) # ➞ 'Apple'
