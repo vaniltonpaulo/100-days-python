@@ -131,3 +131,54 @@ print(transform([2, 2, 0, 8, 10])) # ➞ [1, 1, -1, 7, 9]
 
 print(transform([9, 13, 15, 5, 2, 11])) # ➞ [10, 14, 16, 6, 1, 12]
 
+def asc_des_none(lst, s):
+    if s == "Asc":
+        return sorted(lst)
+    elif s == "Des":
+        return sorted(lst, reverse = True)
+    else:
+        return lst 
+
+
+print(asc_des_none([4, 3, 2, 1], "Asc" )) # ➞ [1, 2, 3, 4]
+
+print(asc_des_none([7, 8, 11, 66], "Des")) # ➞ [66, 11, 8, 7]
+
+print(asc_des_none([1, 2, 3, 4], "None")) # ➞ [1, 2, 3, 4]
+
+def name_shuffle(txt):
+     return " ".join(txt.split()[::-1])
+
+
+print(name_shuffle("Donald Trump")) # ➞ "Trump Donald"
+
+print(name_shuffle("Rosie O'Donnell")) # ➞ "O'Donnell Rosie"
+
+print(name_shuffle("Seymour Butts")) # ➞ "Butts Seymour"
+
+
+def missing_num(lst):
+     for i in range(1,11):
+          if i not in lst:
+                return i
+
+
+print(missing_num([1, 2, 3, 4, 6, 7, 8, 9, 10])) # ➞ 5
+
+print(missing_num([7, 2, 3, 6, 5, 9, 1, 4, 8])) # ➞ 10
+
+print(missing_num([10, 5, 1, 2, 4, 6, 8, 3, 9])) # ➞ 7
+
+
+def alphabet_soup(txt):
+    return "".join(sorted(txt))
+
+print(alphabet_soup("hello")) # ➞ "ehllo"
+
+print(alphabet_soup("edabit")) # ➞ "abdeit"
+
+print(alphabet_soup("hacker")) # ➞ "acehkr"
+
+print(alphabet_soup("geek")) # ➞ "eegk"
+
+print(alphabet_soup("javascript")) # ➞ "aacijprstv"
