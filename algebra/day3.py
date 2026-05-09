@@ -86,3 +86,48 @@ print(sum_lst([1, 2, 3, 4, 5])) # ➞ 15
 print(sum_lst([-1, 0, 1])) # ➞ 0
 
 print(sum_lst([0, 4, 8, 12])) # ➞ 24
+
+
+def half_quarter_eighth(n):
+     return [n/2, n/4, n/8]
+
+print(half_quarter_eighth(6)) # ➞ [3, 1.5, 0.75]
+
+print(half_quarter_eighth(22)) # ➞ [11, 5.5, 2.75]
+
+print(half_quarter_eighth(25)) # ➞ [12.5, 6.25, 3.125]
+
+
+# Control flow very easy
+
+def calculate_fuel(n):
+    return int(n * 10)
+
+print(calculate_fuel(15)) # ➞ 150
+
+print(calculate_fuel(23.5)) # ➞ 235
+
+print(calculate_fuel(3)) # ➞ 100
+
+
+def flip(y):
+    return 1 if y == 0 else 0
+
+print(flip(1)) # ➞ 0
+
+print(flip(0)) # ➞ 1
+
+
+def transform(lst):
+    for i in list(range(len(lst))):
+        lst[i] = lst[i] - 1 if lst[i] % 2 == 0 else lst[i] + 1
+    return lst
+
+print(transform([1, 2, 3, 4, 5])) # ➞ [2, 1, 4, 3, 6]
+
+print(transform([3, 3, 4, 3])) # ➞ [4, 4, 3, 4]
+
+print(transform([2, 2, 0, 8, 10])) # ➞ [1, 1, -1, 7, 9]
+
+print(transform([9, 13, 15, 5, 2, 11])) # ➞ [10, 14, 16, 6, 1, 12]
+
