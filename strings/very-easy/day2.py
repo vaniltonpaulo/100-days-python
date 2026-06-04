@@ -2,6 +2,7 @@ import sys
 sys.path.insert(0, __import__('os').path.join(__import__('os').path.dirname(__file__), '..', '..'))
 from test_utils import Test
 
+
 def bool_to_string(flag):
     return str(flag)
 
@@ -350,5 +351,6 @@ Test.assert_equals(potatoes("potatopotatobananapotatopotato"), 4)
 Test.assert_equals(potatoes("potatopotatomangopotatopotatopotato"), 5)
 Test.assert_equals(potatoes("potatocucumberpotatopotatopotatopotatopotato"), 6)
 Test.summary()
+
 
 
