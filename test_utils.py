@@ -1,3 +1,5 @@
+import inspect
+
 class Test:
     _passed = 0
     _failed = 0
@@ -14,11 +16,18 @@ class Test:
 
     @classmethod
     def summary(cls):
+        caller_globals = inspect.stack()[1].frame.f_globals
+        functions = [
+            name for name, obj in caller_globals.items()
+            if inspect.isfunction(obj) and obj.__module__ == caller_globals.get("__name__")
+        ]
+
         total = cls._passed + cls._failed
-        print(f"\n{cls._passed}/{total} tests passed", end="")
+        print(f"{cls._passed}/{total} tests passed", end="")
         if cls._failed:
             print(f" | {cls._failed} failed")
         else:
             print(" ✓")
+        print(f"Hi Paulo, you have completed {len(functions)} functions so far")
         cls._passed = 0
         cls._failed = 0
