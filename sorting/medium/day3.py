@@ -78,19 +78,18 @@ ordered2 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 
 Test.assert_equals(sorted(gen_deck()), [(2, 'c'), (2, 'd'), (2, 'h'), (2, 's'), (3, 'c'), (3, 'd'), (3, 'h'), (3, 's'), (4, 'c'), (4, 'd'), (4, 'h'), (4, 's'), (5, 'c'), (5, 'd'), (5, 'h'), (5, 's'), (6, 'c'), (6, 'd'), (6, 'h'), (6, 's'), (7, 'c'), (7, 'd'), (7, 'h'), (7, 's'), (8, 'c'), (8, 'd'), (8, 'h'), (8, 's'), (9, 'c'), (9, 'd'), (9, 'h'), (9, 's'), (10, 'c'), (10, 'd'), (10, 'h'), (10, 's'), (11, 'c'), (11, 'd'), (11, 'h'), (11, 's'), (12, 'c'), (12, 'd'), (12, 'h'), (12, 's'), (13, 'c'), (13, 'd'), (13, 'h'), (13, 's'), (14, 'c'), (14, 'd'), (14, 'h'), (14, 's')])
 Test.summary()
 
-def same_upsidedown(num):
-    flipped = {
-        "0": "0",
-        "6": "9",
-        "9": "6"
-    }
-
-    upside_down = ""
-
-    for digit in num[::-1]:
-        upside_down += flipped[digit]
-
-    return upside_down == num
+def same_upsidedown(ntxt):
+    # For every character of the string 
+    for i in range(len(ntxt)) :
+        
+        # If the current digit cannot form a 
+        # valid digit when turned upside-down 
+        if (ntxt[i] == '2' or ntxt[i] == '4' or 
+            ntxt[i] == '5' or ntxt[i] == '6' or 
+            ntxt[i] == '7' or ntxt[i] == '9') :
+            return False; 
+            
+    return True; 
 
 
 Test.assert_equals(same_upsidedown("9"), False)
