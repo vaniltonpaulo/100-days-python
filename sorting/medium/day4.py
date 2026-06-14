@@ -20,7 +20,7 @@ Test.assert_equals(sort_by_last("brick moral institution loud talk resign worth"
 Test.summary()
 
 def sort_it(lst):
-    return ""
+    return sorted(lst, key = lambda x: x if isinstance(x, int) else x[0])
 
 
 
