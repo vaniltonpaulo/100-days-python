@@ -61,3 +61,77 @@ Test.assert_equals(frames(99, 1), 5940)
 Test.assert_equals(frames(419, 70), 1759800)
 Test.assert_equals(frames(52, 33), 102960)
 Test.summary()
+
+
+def ctoa(char):
+    return ord(char)
+
+
+
+Test.assert_equals(ctoa(' '), 32)
+Test.assert_equals(ctoa('A'), 65)
+Test.assert_equals(ctoa(']'), 93)
+Test.assert_equals(ctoa('^'), 94)
+Test.assert_equals(ctoa('c'), 99)
+
+
+def area_shape(base, height, shape):
+    if shape == "triangle":
+        return (base * height) / 2
+    elif shape == "parallelogram":
+        return base * height
+    else:
+        return None
+
+
+
+Test.assert_equals(area_shape(2, 3, "triangle"), 3)
+Test.assert_equals(area_shape(8, 6, "parallelogram"), 48)
+Test.assert_equals(area_shape(0, 1, "triangle"), 0)
+Test.assert_equals(area_shape(2.9, 1.3, "parallelogram"), 3.77)
+Test.assert_equals(area_shape(0.01, 5, "triangle"), 0.025)
+
+
+
+def accept_into_movie(age, is_supervised):
+    if age >= 15 or is_supervised:
+        return True
+    else:
+        return False
+
+
+
+Test.assert_equals(accept_into_movie(14, True), True)
+Test.assert_equals(accept_into_movie(15, True), True)
+Test.assert_equals(accept_into_movie(16, True), True)
+Test.assert_equals(accept_into_movie(14, False), False)
+Test.assert_equals(accept_into_movie(15, False), True)
+Test.assert_equals(accept_into_movie(16, False), True)
+Test.assert_equals(accept_into_movie(14.99999, True), True)
+Test.assert_equals(accept_into_movie(14.99999, False), False)
+Test.summary()
+
+
+def add_up(num):
+    total = 0
+    for i in range(num+ 1):
+        total += i
+    return total 
+
+
+Test.assert_equals(add_up(4), 10)
+Test.assert_equals(add_up(13), 91)
+Test.assert_equals(add_up(600), 180300)
+Test.assert_equals(add_up(392), 77028)
+Test.assert_equals(add_up(53), 1431)
+Test.assert_equals(add_up(897), 402753)
+Test.assert_equals(add_up(23), 276)
+Test.assert_equals(add_up(1000), 500500)
+Test.assert_equals(add_up(738), 272691)
+Test.assert_equals(add_up(100), 5050)
+Test.assert_equals(add_up(925), 428275)
+Test.assert_equals(add_up(1), 1)
+Test.assert_equals(add_up(999), 499500)
+Test.assert_equals(add_up(175), 15400)
+Test.assert_equals(add_up(111), 6216)
+Test.summary()
