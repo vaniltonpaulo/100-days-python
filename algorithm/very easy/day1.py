@@ -244,3 +244,27 @@ Test.assert_equals(largest_numbers(0, [1, 2, 3, 4, 8, 7, 6, 5]), [])
 Test.assert_equals(largest_numbers(2, [4, 3, 2, 1]), [3, 4])
 Test.assert_equals(largest_numbers(1, [7, 19, 4, 2]), [19])
 Test.assert_equals(largest_numbers(3, [14, 12, 57, 11, 18, 16]), [16, 18, 57])
+
+
+def sum_digits(n):
+    if n  == 0:
+        return 1
+    count  = 0
+    while n > 0:
+     count += 1
+     n //=10
+    return count
+
+
+
+Test.assert_equals(sum_digits(100), 3)
+Test.assert_equals(sum_digits(1000), 4)
+Test.assert_equals(sum_digits(12345), 5)
+Test.assert_equals(sum_digits(1000000000), 10)
+Test.assert_equals(sum_digits(145874589632), 12)
+Test.assert_equals(sum_digits(0), 1)
+Test.assert_equals(sum_digits(12345698745254856320), 20)
+Test.assert_equals(sum_digits(123456789), 9)
+Test.assert_equals(sum_digits(1234569874525485632012345698745254856320), 40)
+Test.assert_equals(sum_digits(1232458), 7)
+Test.summary()
