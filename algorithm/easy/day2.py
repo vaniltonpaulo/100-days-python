@@ -142,3 +142,47 @@ Test.assert_equals(equal(1,1,1), 3, "All 3 values are equal")
 Test.assert_equals(equal(1,7,6), 0, "All values are differents")
 Test.assert_equals(equal(7, 7, 7), 3, "All 3 values are equal")
 Test.assert_equals(equal(6, 3, 3), 2, "Two values are equal")
+
+
+import math
+
+def century_from_year(year):
+    return (year -1) // 100 +1
+
+Test.assert_equals(century_from_year(2020), 21)
+Test.assert_equals(century_from_year(200), 2)
+Test.assert_equals(century_from_year(2005), 21)
+Test.assert_equals(century_from_year(1700), 17)
+Test.assert_equals(century_from_year(1705), 18)
+Test.summary()
+
+
+def get_discounts(nums, d):
+    d = d.strip("%")
+    x = int(d[:2]) / 100
+    return list(map(lambda i : i * x,nums))
+
+Test.assert_equals(get_discounts([2, 4, 6, 11], "50%"), [1, 2, 3, 5.5])
+Test.assert_equals(get_discounts([10, 20, 40, 80], "75%"), [7.5, 15, 30, 60])
+Test.assert_equals(get_discounts([100], "45%"), [45])
+Test.assert_equals(get_discounts([20], "1%"), [0.2])
+Test.assert_equals(get_discounts([100, 1000, 10000], "5%"), [5, 50, 500])
+
+
+def scale_tip(lst):
+    return lst
+
+
+Test.assert_equals(scale_tip([0, 0, 0, "I", 1, 1, 1]), "right", "0 < 3 so it will tip right")
+Test.assert_equals(scale_tip([1, 2, 3, "I", 4, 0, 0]), "left", "6 > 4 so it will tip left")
+Test.assert_equals(scale_tip([5, 5, 5, "I", 10, 2, 3]), "balanced", "15 = 15 so it will stay balanced")
+Test.assert_equals(scale_tip([2, 3, 1, "I", 6, 0, 0]), "balanced")
+Test.assert_equals(scale_tip([500, 0, 0, "I", 32, 53, 12]), "left")
+Test.assert_equals(scale_tip([500, 0, 0, "I", 302, 53, 12]), "left")
+Test.assert_equals(scale_tip([50, 0, 0, "I", 32, 53, 12]), "right")
+Test.assert_equals(scale_tip([5, "I", 3]), "left")
+Test.assert_equals(scale_tip([500, 0, 0, "I", 500, 0, 0]), "balanced")
+Test.assert_equals(scale_tip([500, 0, 0, 0, 0, 0, "I", 32, 53, 12, 0, 0, 0]), "left")
+Test.assert_equals(scale_tip([1, 300, "I", 300, 1]), "balanced")
+Test.assert_equals(scale_tip([1, 300, "I", 300, 2]), "right")
+     
