@@ -167,10 +167,18 @@ Test.assert_equals(get_discounts([10, 20, 40, 80], "75%"), [7.5, 15, 30, 60])
 Test.assert_equals(get_discounts([100], "45%"), [45])
 Test.assert_equals(get_discounts([20], "1%"), [0.2])
 Test.assert_equals(get_discounts([100, 1000, 10000], "5%"), [5, 50, 500])
+Test.summary()
 
 
 def scale_tip(lst):
-    return lst
+    x = lst.index("I")
+    if sum(lst[:x]) > sum(lst[x+1:]):
+        return "left"
+    elif sum(lst[:x]) < sum(lst[x+1:]):
+        return "right"
+    else:
+        return "balanced"
+
 
 
 Test.assert_equals(scale_tip([0, 0, 0, "I", 1, 1, 1]), "right", "0 < 3 so it will tip right")
@@ -185,4 +193,58 @@ Test.assert_equals(scale_tip([500, 0, 0, "I", 500, 0, 0]), "balanced")
 Test.assert_equals(scale_tip([500, 0, 0, 0, 0, 0, "I", 32, 53, 12, 0, 0, 0]), "left")
 Test.assert_equals(scale_tip([1, 300, "I", 300, 1]), "balanced")
 Test.assert_equals(scale_tip([1, 300, "I", 300, 2]), "right")
-     
+
+
+def even_or_odd(s):
+    x = list(s)
+    x = list(map(lambda i : int(i),x))
+    evs = []
+    odds = []
+    for i in x :
+        if i % 2 ==0:
+            evs.append(i)
+        else:
+            odds.append(i)
+    if sum(evs) > sum(odds):
+        return "Even is greater than Odd"
+    elif sum(evs) < sum(odds):
+        return "Odd is greater than Even"
+    else:
+        return "Even and Odd are the same"
+
+
+
+Test.assert_equals(even_or_odd('12345'), 'Odd is greater than Even')
+Test.assert_equals(even_or_odd('143'), 'Even and Odd are the same')
+Test.assert_equals(even_or_odd('2221'), 'Even is greater than Odd')
+Test.assert_equals(even_or_odd('23456'), 'Even is greater than Odd')
+Test.assert_equals(even_or_odd('4321'), 'Even is greater than Odd')
+Test.assert_equals(even_or_odd('3245'), 'Odd is greater than Even')
+Test.assert_equals(even_or_odd('14256'), 'Even is greater than Odd')
+Test.assert_equals(even_or_odd('11234'), 'Even is greater than Odd')
+Test.assert_equals(even_or_odd('1734'), 'Odd is greater than Even')
+Test.assert_equals(even_or_odd('145'), 'Odd is greater than Even')
+Test.assert_equals(even_or_odd('22471'), 'Even and Odd are the same')
+Test.assert_equals(even_or_odd('213613'), 'Even and Odd are the same')
+Test.assert_equals(even_or_odd('23456'), 'Even is greater than Odd')
+Test.assert_equals(even_or_odd('9738'), 'Odd is greater than Even')
+Test.assert_equals(even_or_odd('34522'), 'Even and Odd are the same')
+Test.assert_equals(even_or_odd('12378'), 'Odd is greater than Even')
+Test.assert_equals(even_or_odd('45228'), 'Even is greater than Odd')
+Test.assert_equals(even_or_odd('4455'), 'Odd is greater than Even')
+Test.assert_equals(even_or_odd('6721'), 'Even and Odd are the same')
+Test.assert_equals(even_or_odd('92184'), 'Even is greater than Odd') 
+Test.assert_equals(even_or_odd('12'), 'Even is greater than Odd')
+Test.assert_equals(even_or_odd('123'), 'Odd is greater than Even')
+Test.assert_equals(even_or_odd('112'), 'Even and Odd are the same')
+Test.assert_equals(even_or_odd('124'), 'Even is greater than Odd')
+Test.summary()
+
+import string
+def alph_num(txt):
+    return " ".join(str(string.ascii_uppercase.index(i))for i in txt)
+
+Test.assert_equals(alph_num("ABCD"), "0 1 2 3")
+Test.assert_equals(alph_num("BCDA"), "1 2 3 0")
+Test.assert_equals(alph_num("AAA"), "0 0 0")
+Test.assert_equals(alph_num("XYZ"), "23 24 25")
