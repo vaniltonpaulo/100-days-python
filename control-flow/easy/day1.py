@@ -37,3 +37,91 @@ Test.assert_equals(count_palindromes(555, 556), 1)
 Test.assert_equals(count_palindromes(878, 898), 3)
 Test.assert_equals(count_palindromes(8, 34), 5)
 Test.assert_equals(count_palindromes(1550, 1556), 1)
+
+
+
+def sum_of_evens(lst):
+    result = 0
+    for i in range(len(lst)):
+        for j in range(len(lst[i])):
+            if lst[i][j] % 2 == 0:
+                result += lst[i][j]
+    return result
+
+
+
+
+Test.assert_equals(sum_of_evens([
+		[1, 5, 1, 3], 
+		[4, 1, 2, 0], 
+		[6, 9, 7, 4], 
+		[5, 1, 2, 6]
+	]), 24)
+	
+Test.assert_equals(sum_of_evens([
+		[1, 0, 1],
+		[33, 1, 2],
+		[15, 9, 1],
+		[5, 1, 979]
+	]), 2)
+	
+Test.assert_equals(sum_of_evens([
+		[2, 19, 5, 43], 
+		[67, 2, 0, 12]
+	]), 16)
+	
+Test.assert_equals(sum_of_evens([
+		[1, 3, 7, 9], 
+		[11, 13, 15, 17], 
+		[19, 21, 23, 25]
+	]), 0)
+
+Test.assert_equals(sum_of_evens([
+		[], 
+		[], 
+		[]
+	]), 0)
+
+
+# def split(txt):
+#     txt = txt.split()
+
+
+
+
+# Test.assert_equals(split("abcde"), "aebcd")
+# Test.assert_equals(split("Hello!"), "eoHll!")
+# Test.assert_equals(split("What's the time?"), "aeieWht's th tm?")
+
+
+
+def hacker_speak(txt):
+    return txt.replace("a","4").replace("e","3").replace("i","1").replace("o","0").replace("s","5")
+
+
+
+Test.assert_equals(hacker_speak("javascript is cool"), "j4v45cr1pt 15 c00l")
+Test.assert_equals(hacker_speak("become a coder"), "b3c0m3 4 c0d3r")
+Test.assert_equals(hacker_speak("hi there"), "h1 th3r3")
+Test.assert_equals(hacker_speak("programming is fun"), "pr0gr4mm1ng 15 fun")
+Test.assert_equals(hacker_speak("keep on practicing"), "k33p 0n pr4ct1c1ng")
+
+Test.summary()
+
+
+# def century(year):
+#     cent = year //100 +1
+#     if 
+#     return f"{cent}th century"
+
+
+# Test.assert_equals(century(1756), "18th century")
+# Test.assert_equals(century(1555), "16th century")
+# Test.assert_equals(century(1000), "10th century")
+# Test.assert_equals(century(1001), "11th century")
+# Test.assert_equals(century(2005), "21st century")
+# Test.assert_equals(century(1789), "18th century")
+# Test.assert_equals(century(1510), "16th century")
+# Test.assert_equals(century(1615), "17th century")
+# Test.assert_equals(century(2000), "20th century")
+# Test.assert_equals(century(1997), "20th century")
