@@ -420,6 +420,7 @@ Test.assert_equals(forbidden_letter('i', ['rock', 'paper', 'scissors']), False)
 Test.assert_equals(forbidden_letter('t', []), True)
 
 
+#nice
 
 
 Test.summary()
