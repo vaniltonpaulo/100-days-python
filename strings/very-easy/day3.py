@@ -421,6 +421,88 @@ Test.assert_equals(forbidden_letter('t', []), True)
 
 
 #nice
+def measure_the_depth(lst):
+    return str(lst).count("[")
+
+
+Test.assert_equals(measure_the_depth([]), 1)
+Test.assert_equals(measure_the_depth([[]]), 2)
+Test.assert_equals(measure_the_depth([[[]]]), 3)
+Test.assert_equals(measure_the_depth([[[[[[]]]]]]), 6)
+Test.assert_equals(measure_the_depth([[[[[[[[]]]]]]]]), 8)
+Test.assert_equals(measure_the_depth([[[[[[[[[[[[[]]]]]]]]]]]]]), 13)
+Test.assert_equals(measure_the_depth([[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]), 17)
+Test.assert_equals(measure_the_depth([[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]), 18)
+
+
+
+def list_to_string(lst):
+    return "".join(str(i) for i in lst)
+
+
+
+Test.assert_equals(list_to_string([1, 2, 3, 4, 5, 6]), "123456")
+Test.assert_equals(list_to_string(["a", "b", "c", "d", "e", "f"]), "abcdef")
+Test.assert_equals(list_to_string([1, 2, 3, "a", "s", "d"]), "123asd")
+Test.assert_equals(list_to_string(["a", "s", "d", "f", "e", "r", 1, 2, 3, 4, 5, 0]), "asdfer123450")
+Test.assert_equals(list_to_string(["A","D","F","G","H","Y","TR","NNHJK"]), "ADFGHYTRNNHJK")
+
+
+def to_number_list(lst):
+    result  = []
+    for i in lst:
+        num = float(i)
+        result.append(int(num) if num.is_integer() else num)
+    return result 
+
+
+
+Test.assert_equals(to_number_list(["1", "2"]), [1, 2])
+Test.assert_equals(to_number_list(["3", "4"]), [3, 4])
+Test.assert_equals(to_number_list(["5", "6"]), [5, 6])
+Test.assert_equals(to_number_list(["7", "8"]), [7, 8])
+Test.assert_equals(to_number_list(["9", "10"]), [9, 10])
+Test.assert_equals(to_number_list(["91", "44"]), [91, 44])
+Test.assert_equals(to_number_list(["19", "14"]), [19, 14])
+Test.assert_equals(to_number_list(["29", "34"]), [29, 34])
+Test.assert_equals(to_number_list(["0", "4"]), [0, 4])
+Test.assert_equals(to_number_list(["21", "23"]), [21, 23])
+Test.assert_equals(to_number_list(["12", "25"]), [12, 25])
+Test.assert_equals(to_number_list(["99", "20"]), [99, 20])
+Test.assert_equals(to_number_list(["9", "4", "5", "6", "7", "8", "9"]), [9, 4, 5, 6, 7, 8, 9])
+Test.assert_equals(to_number_list(["11", "14", "13", "12", "3", "6"]), [11, 14, 13, 12, 3, 6])
+Test.assert_equals(to_number_list(["7", "14", "16", "18", "19", "20"]), [7, 14, 16, 18, 19, 20])
+Test.assert_equals(to_number_list(["9.4", "4.2"]), [9.4, 4.2])
+Test.assert_equals(to_number_list(["1.4", "4.4", "5.7", "4.3", "9.8", "5.3", "8.7", "8.6", "9.8"]), [1.4, 4.4, 5.7, 4.3, 9.8, 5.3, 8.7, 8.6, 9.8])
+Test.assert_equals(to_number_list(["9.5", "8.8"]), [9.5, 8.8])
+Test.assert_equals(to_number_list(["3.4", "8.6"]), [3.4, 8.6])
+Test.assert_equals(to_number_list(["5.9", "1.5", "7.8", "4.9", "8.5", "8.4"]), [5.9, 1.5, 7.8, 4.9, 8.5, 8.4])
+Test.assert_equals(to_number_list(["8.7"]), [8.7])
+Test.assert_equals(to_number_list(["7.0", "4.7", "8.4"]), [7, 4.7, 8.4])
+Test.assert_equals(to_number_list(["7.2", "9.7", "4.0", "9.7", "6.5"]), [7.2, 9.7, 4, 9.7, 6.5])
+Test.assert_equals(to_number_list(["9.3", "3.9", "7.9", "4.7"]), [9.3, 3.9, 7.9, 4.7])
+Test.assert_equals(to_number_list(["4.1", "2.9", "1.7"]), [4.1, 2.9, 1.7])
+Test.assert_equals(to_number_list(["9.0", "3.8", "8.8"]), [9, 3.8, 8.8])
+Test.assert_equals(to_number_list(["6.0", "6.9", "3.7", "6.9", "8.3", "7.8", "1.5", "2.6"]), [6, 6.9, 3.7, 6.9, 8.3, 7.8, 1.5, 2.6])
+Test.assert_equals(to_number_list(["9.2", "5.8", "1.3", "3.4", "3.0", "8.5", "3.4", "6.8", "9.9"]), [9.2, 5.8, 1.3, 3.4, 3, 8.5, 3.4, 6.8, 9.9])
+Test.assert_equals(to_number_list(["8.3", "9.7", "8.0"]), [8.3, 9.7, 8])
+Test.assert_equals(to_number_list(["2.1", "1.7", "7.0", "4.7", "9.3", "6.8", "9.1", "9.1"]), [2.1, 1.7, 7, 4.7, 9.3, 6.8, 9.1, 9.1])
+Test.assert_equals(to_number_list(["9.8", "4.6", "7.3", "7.4", "1.9", "6.3", "8.7"]), [9.8, 4.6, 7.3, 7.4, 1.9, 6.3, 8.7])
+Test.assert_equals(to_number_list(["2.4"]), [2.4])
+
+
+def reverse_case(txt):
+    return txt.swapcase()
+
+
+Test.assert_equals(reverse_case('Happy Birthday'), 'hAPPY bIRTHDAY')
+Test.assert_equals(reverse_case('MANY THANKS'), 'many thanks')
+Test.assert_equals(reverse_case('sPoNtAnEoUs'), 'SpOnTaNeOuS')
+Test.assert_equals(reverse_case('eXCELLENT, yOuR mAJESTY'), 'Excellent, YoUr Majesty')
+
+
+
+
 
 
 Test.summary()
