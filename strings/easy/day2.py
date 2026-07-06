@@ -68,3 +68,38 @@ Test.assert_equals(replace_vowels("the aardvark", "#"), "th# ##rdv#rk")
 Test.assert_equals(replace_vowels("minnie mouse", "?"), "m?nn?? m??s?")
 Test.assert_equals(replace_vowels("shakespeare", "*"), "sh*k*sp**r*")
 Test.assert_equals(replace_vowels("all is fair in love and war", "<"), "<ll <s f<<r <n l<v< <nd w<r")
+
+
+def index_of_caps(word):
+    return [i for i, c in enumerate(word) if c.isupper()]
+
+
+Test.assert_equals(index_of_caps("eDaBiT"), [1, 3, 5])
+Test.assert_equals(index_of_caps("eQuINoX"), [1, 3, 4, 6])
+Test.assert_equals(index_of_caps("determine"), [])
+Test.assert_equals(index_of_caps("STRIKE"), [0, 1, 2, 3, 4, 5])
+Test.assert_equals(index_of_caps("sUn"), [1])
+Test.assert_equals(index_of_caps("SpiDer"), [0, 3])
+Test.assert_equals(index_of_caps("accOmpAnY"), [3, 6, 8])
+Test.assert_equals(index_of_caps("@xCE#8S#i*$en"), [2, 3, 6])
+Test.assert_equals(index_of_caps("1854036297"), [])
+Test.assert_equals(index_of_caps("Fo?.arg~{86tUx=|OqZ!"), [0, 12, 16, 18])
+
+
+def filter_list(l):
+    return [i for i in l if isinstance(i, int)]
+
+
+Test.assert_equals(filter_list([1, 2, 3, "a", "b", 4]), [1, 2, 3, 4])
+Test.assert_equals(filter_list(["A", 1, "&amp", 0, -9, "Edabit"]), [1, 0, -9])
+
+
+
+
+
+
+
+
+
+
+Test.summary()
