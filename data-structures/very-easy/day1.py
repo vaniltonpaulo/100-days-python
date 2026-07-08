@@ -89,3 +89,5 @@ Test.assert_equals(rotate_by_one([6,5,8,9,7]), [7, 6, 5, 8, 9])
 Test.assert_equals(rotate_by_one([20,15,26,8,4]), [4, 20, 15, 26, 8])
 Test.assert_equals(rotate_by_one([7,8,6,4,5]), [5, 7, 8, 6, 4])
 Test.assert_equals(rotate_by_one([5,9,45,1,2]), [2, 5, 9, 45, 1])
+
+Test.summary()
