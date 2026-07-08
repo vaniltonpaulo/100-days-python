@@ -180,4 +180,55 @@ Test.assert_equals(find_occurrences("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 Test.assert_equals(find_occurrences("she sell sea shells on the sea shore", "s"), {"she": 1, "sell": 1, "sea": 1, "shells": 2, "on": 0, "the": 0, "shore": 1})
 Test.assert_equals(find_occurrences("Woah, I just realised, that I could, use this, to find, punctuation also.", ","), {"woah,": 1, "i": 0, "just": 0, "realised,": 1, "that": 0, "could,": 1, "use": 0, "this,": 1, "to": 0, "find,": 1, "punctuation": 0, "also.": 0})
 
+
+
+def get_student_names(students):
+    return sorted(students.values())
+
+
+Test.assert_equals(get_student_names({
+	"Student 1":"Steve",
+	"Student 2":"Becky",
+	"Student 3":"John"
+}), ["Becky", "John", "Steve"])
+
+Test.assert_equals(get_student_names({
+	"Student 1":"Jacek",
+	"Student 2":"Ewa",
+	"Student 3":"Zygmunt",
+	"Student 4":"Tomek"
+}), ["Ewa", "Jacek", "Tomek", "Zygmunt"])
+
+
+
+def oldest(people):
+    return max(people, key= lambda name: people[name])
+    
+
+Test.assert_equals(oldest({'Charlotte': 53, 'Oliver': 15, 'Henry': 18, 'Gabriel': 46, 'Violet': 13}), "Charlotte")
+Test.assert_equals(oldest({'Grayson': 50, 'Imogen': 63, 'Logan': 21, 'Daniel': 64, 'Rory': 19}), "Daniel")
+Test.assert_equals(oldest({'Josh': 78, 'Adam': 63, 'Aria': 65, 'Grace': 51, 'Bella': 37}), "Josh")
+Test.assert_equals(oldest({'Alex': 9, 'Jayden': 18, 'Julia': 43, 'Penelope': 32, 'Ella': 34}), "Julia")
+Test.assert_equals(oldest({'Sam': 65, 'Joseph': 60, 'Mia': 41, 'Thomas': 31, 'Rebecca': 5}), "Sam")
+Test.assert_equals(oldest({'Eden': 64, 'Archie': 18, 'Olivia': 32, 'Kai': 84, 'Harry': 14}), "Kai")
+Test.assert_equals(oldest({'Anna': 67, 'Elijah': 10, 'Cole': 31, 'Andrew': 24, 'Elliot': 77}), "Elliot")
+Test.assert_equals(oldest({'Innes': 77, 'Lilly': 11, 'Hallie': 41, 'Nina': 66, 'Ryan': 9}), "Innes")
+Test.assert_equals(oldest({'Isla': 73, 'Elsie': 6, 'Frankie': 36, 'Robbie': 75, 'Kayla': 9}), "Robbie")
+Test.assert_equals(oldest({'Jack': 64, 'Jacob': 33, 'Tommy': 17, 'Finn': 5, 'Isaac': 13}), "Jack")
+Test.assert_equals(oldest({'Carson': 81, 'Charlie': 33, 'Riley': 28, 'Maria': 39, 'Sadie': 67}), "Carson")
+Test.assert_equals(oldest({'Amy': 70, 'Owen': 11, 'Matilda': 64, 'Lexi': 37, 'Lena': 26}), "Amy")
+Test.assert_equals(oldest({'Lola': 45, 'Tyler': 23, 'Hope': 4, 'Phoebe': 86, 'Freya': 44}), "Phoebe")
+Test.assert_equals(oldest({'Hollie': 48, 'Harris': 24, 'Ava': 72, 'Alfie': 9, 'Louis': 47}), "Ava")
+Test.assert_equals(oldest({'Erica': 32, 'Eve': 82, 'Harper': 74, 'Summer': 38, 'Ben': 72}), "Eve")
+Test.assert_equals(oldest({'Michael': 63, 'Jessica': 65, 'Reuben': 25, 'Aiden': 82, 'Emily': 18}), "Aiden")
+Test.assert_equals(oldest({'Brooke': 8, 'Lucy': 44, 'Cooper': 33, 'Ellie': 82, 'Millie': 7}), "Ellie")
+Test.assert_equals(oldest({'Piper': 10, 'Quinn': 62, 'David': 20, 'John': 61, 'Noah': 17}), "Quinn")
+Test.assert_equals(oldest({'Cara': 5, 'Max': 81, 'Lucas': 62, 'Sophie': 71, 'Amelia': 79}), "Max")
+Test.assert_equals(oldest({'Leo': 29, 'Clara': 8, 'Florence': 69, 'Lewis': 38, 'James': 47}), "Florence")
+
+
+
+
+
+
 Test.summary()
