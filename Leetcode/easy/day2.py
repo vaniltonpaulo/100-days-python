@@ -6,4 +6,10 @@ class Solution:
                 if nums[j] == target - nums[i]:
                     return[i, j]
         return []
+
+
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        return str(x) == str(x)[::-1]       
     
